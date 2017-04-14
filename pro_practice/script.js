@@ -1,10 +1,15 @@
-/*
-  Write code to make the number on the DOM countdown each second.
-  Only one number should be displayed on the DOM at a time.
-
-  HINT: look into javascript's setInterval() function.
+  //
+  // Write code to make the number on the DOM countdown each second.
+  // Only one number should be displayed on the DOM at a time.
 
 
-  BONUS 1: Add a button for the user to reset the timer.
-  BONUS 2: Make something cool happen using a jQuery animation when the timer gets to zero.
-*/
+var sec = 10
+var timer = setInterval(function() {
+   $('.count span').text(sec--);
+   if (sec == -1) {
+      $('.count').fadeOut('fast');
+        $('html').css({'background-image': "url('giphy-1.gif')"});
+        $('h1').text('Boom goes the dynomite!!!')
+      clearInterval(timer);
+   }
+}, 1000);
